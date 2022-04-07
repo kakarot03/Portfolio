@@ -66,6 +66,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -73,6 +74,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  overflow-x: hidden;
 }
 
 h1,
@@ -176,7 +178,7 @@ img {
 .nav_toggle {
   color: var(--second-color);
   font-size: 1.5rem;
-  margin-right: 20px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
@@ -197,7 +199,7 @@ img {
 }
 
 .home {
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 13rem);
   row-gap: 1rem;
 }
 
@@ -220,8 +222,8 @@ img {
 }
 
 .home_social {
-  margin-top: 5px;
-  margin-left: 50px;
+  margin-top: 10%;
+  margin-left: 13%;
   display: flex;
   flex-direction: column;
 }
@@ -244,9 +246,8 @@ img {
 
 .home_img {
   position: absolute;
-  top: 500px;
+  top: 50%;
   margin-left: 38%;
-  bottom: 0;
   width: 200px;
 }
 
@@ -426,9 +427,15 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 100%;
   margin-top: var(--margin-6);
   border-radius: 0.5rem;
+}
+
+.resume_tag {
+  width: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Work Section */
@@ -448,7 +455,13 @@ img {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
-  width: 50%;
+  width: 100%;
+}
+
+.work_link {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .work_img img {
@@ -458,12 +471,6 @@ img {
 
 .work_img img:hover {
   transform: scale(1.1);
-}
-
-.resume_tag {
-  width: 310px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Contact */
@@ -508,8 +515,8 @@ img {
 
 .contact_icon {
   position: relative;
-  top: 5px;
-  right: 48px;
+  top: 3%;
+  right: 13%;
   font-size: 25px;
   color: blue;
 }
@@ -638,6 +645,11 @@ img {
   .work_img {
     width: 80%;
   }
+  .work_link {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .contact_form {
     width: 400px;
   }
@@ -645,13 +657,13 @@ img {
     justify-items: center;
   }
   .resume_img {
-    width: 260px;
-    height: 200px;
+    width: 80%;
+    height: 80%;
     margin-top: var(--margin-6);
     border-radius: 0.5rem;
   }
   .resume_tag {
-    width: 180px;
+    width: 20%;
     margin-left: 430px;
   }
 }
