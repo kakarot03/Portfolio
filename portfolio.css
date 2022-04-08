@@ -72,7 +72,7 @@ html {
 body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
+  font-size: 0.4 rem;
   color: var(--second-color);
   overflow-x: hidden;
 }
@@ -433,7 +433,7 @@ img {
 }
 
 .resume_tag {
-  width: 60px;
+  width: 25%;
   margin-left: auto;
   margin-right: auto;
 }
