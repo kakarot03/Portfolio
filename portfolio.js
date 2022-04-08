@@ -17,17 +17,35 @@ function dummy(e) {
 }
 
 function sendMail() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("emailId").value;
+  let msg = document.getElementById("message").value;
+  let err = document.getElementById("error");
+  if (name === "" || email === "" || msg === "") {
+    err.classList.add("error_message");
+    err.classList.remove("success_message");
+    err.innerHTML = "Fill all the Sections";
+    return;
+  }
   var params = {
-    from_name: document.getElementById("name").value,
-    email_id: document.getElementById("emailId").value,
-    message: document.getElementById("message").value,
+    from_name: name,
+    email_id: email,
+    message: msg,
   };
+  err.classList.remove("error_message");
+  err.innerHTML = "";
+  document.getElementById("contact_form").reset();
   emailjs
     .send("service_5o6n3vc", "template_plrwrh5", params)
     .then(function (res) {
-      alert("Mail Sent successfully" + res.status);
+      err.classList.add("success_message");
+      err.innerHTML = "Mail Sent Successfully";
     });
-  document.getElementById("contact_form").reset();
+  const myTimeout = setTimeout(removeMsg, 6000);
+}
+
+function removeMsg() {
+  document.getElementById("error").innerHTML = "";
 }
 
 showMenu("nav_toggle", "nav_menu");

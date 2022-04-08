@@ -208,7 +208,7 @@
             <h2 class="section_title" id="contact2" data-aos="fade-down">Contact</h2>
 
             <div class="contact_container bd_grid">
-
+                <p id="error"></p>
                 <form class="contact_form" id="contact_form" onsubmit="dummy(event)">
                     <input type="text" placeholder="Name" class="control_input" id="name" name="userName" data-aos="fade-right" data-aos-delay="250">
                     <i class='bx bxs-user-account contact_icon'></i>
@@ -216,7 +216,7 @@
                     <input type="text" placeholder="E-Mail" class="control_input" id="emailId" name="userEmail" data-aos="fade-right" data-aos-delay="300">
                     <i class='bx bx-mail-send contact_icon'></i>
 
-                    <input name="" type="text" id="message" cols="0" rows="6" class="control_input" name="message" data-aos="fade-right" data-aos-delay="350" style="height: 100px;"></input>
+                    <textarea name="" type="text" id="message" cols="0" rows="6" class="control_input" name="message" data-aos="fade-right" data-aos-delay="350" style="height: 100px;"></textarea>
 
                     <button type="submit" onclick="sendMail()" id="submit" class="control_button button" name="btn-send" data-aos="fade-right" data-aos-delay="400">Send</button>
 
