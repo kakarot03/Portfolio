@@ -513,12 +513,24 @@ img {
   transform: translateY(4px);
 }
 
-.contact_icon {
-  position: relative;
-  top: 3%;
-  right: 13%;
-  font-size: 25px;
-  color: blue;
+@media screen and (min-width: 400px) {
+  .contact_icon {
+    position: relative;
+    top: 3%;
+    right: 13%;
+    font-size: 25px;
+    color: blue;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact_icon {
+    position: relative;
+    left: 80%;
+    bottom: 14%;
+    font-size: 25px;
+    color: blue;
+  }
 }
 
 .error_message {

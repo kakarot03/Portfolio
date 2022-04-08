@@ -22,9 +22,10 @@ function sendMail() {
   let msg = document.getElementById("message").value;
   let err = document.getElementById("error");
   if (name === "" || email === "" || msg === "") {
-    err.classList.add("error_message");
     err.classList.remove("success_message");
+    err.classList.add("error_message");
     err.innerHTML = "Fill all the Sections";
+    setTimeout(removeMsg, 6000);
     return;
   }
   var params = {
@@ -41,7 +42,7 @@ function sendMail() {
       err.classList.add("success_message");
       err.innerHTML = "Mail Sent Successfully";
     });
-  const myTimeout = setTimeout(removeMsg, 6000);
+  setTimeout(removeMsg, 6000);
 }
 
 function removeMsg() {
