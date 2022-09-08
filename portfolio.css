@@ -393,11 +393,11 @@ img {
 }
 
 .skill_js {
-  width: 68%;
+  width: 80%;
 }
 
 .skill_react {
-  width: 80%;
+  width: 78%;
 }
 
 .skill_node {
@@ -582,43 +582,55 @@ img {
   body {
     margin: 0;
   }
+
   .home {
     margin-top: 100px;
   }
+
   .section {
     padding-top: 4rem;
     padding-bottom: 3rem;
   }
+
   .section_title {
     margin-bottom: var(--margin-6);
   }
+
   .section_title::after {
     width: 80px;
     top: 3rem;
   }
+
   .nav {
     height: calc(var(--header-height) + 1rem);
   }
+
   .nav_list_items {
     margin-left: var(--margin-6);
     margin-bottom: 0;
   }
+
   .nav_list {
     display: flex;
     padding-top: 0;
   }
+
   .nav_toggle {
     display: none;
   }
+
   .nav_link {
     color: var(--second-color);
   }
+
   .home {
     height: 80vh;
   }
+
   .home_data {
     align-self: flex-end;
   }
+
   .home_social {
     padding-top: 0;
     margin-left: auto;
@@ -626,63 +638,77 @@ img {
     flex-direction: row;
     align-self: flex-end;
   }
+
   .home_social-icon {
     font-size: 38px;
     margin-bottom: 0;
     margin-right: var(--margin-4);
   }
+
   .home_img {
     width: 30%;
     top: 190px;
     bottom: 15%;
   }
+
   .home_img svg {
     padding-right: 85px;
     width: 100%;
   }
+
   .about_container,
   .skills_container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     text-align: initial;
   }
+
   .about_img svg {
     width: 450px;
   }
+
   .skills_img1 {
     margin-left: 0;
     width: 84%;
   }
+
   .skills_img2 {
     padding-top: 50px;
     padding-right: 50px;
     margin-left: 0;
     width: 95%;
   }
+
   .work_container {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
   }
+
   .work_img {
     width: 80%;
   }
+
   .work_link {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
   }
+
   .contact_form {
     width: 400px;
   }
+
   .contact_container {
     justify-items: center;
   }
+
   .resume_img {
     width: 80%;
     height: 80%;
     margin-top: var(--margin-6);
     border-radius: 0.5rem;
   }
+
   .resume_tag {
     width: 20%;
     margin-left: 430px;
@@ -694,6 +720,7 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
+
   .home_img {
     right: 10%;
   }
