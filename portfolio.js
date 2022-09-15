@@ -17,6 +17,12 @@ function dummy(e) {
   return false;
 }
 
+document.querySelector('#to-top').addEventListener('click', () => {
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 0);
+});
+
 async function sendMail() {
   let name = document.getElementById('name').value;
   let email = document.getElementById('emailId').value;
