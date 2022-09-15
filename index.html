@@ -8,10 +8,12 @@
     <title>Sri's Portfolio</title>
     <link rel="icon" href="./assets/img/portfolio.ico" type="image/x-icon">
     <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="contactButton.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a80609ccfb.js" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 </head>
 
 <body>
@@ -40,24 +42,52 @@
         <!-- Home Section -->
         <section class="home bd_grid" id="home">
             <div class="home_data" data-aos="fade-down">
-                <h1 class="home_title">Hey, <br>It's me <span class="home_title-color">Srivarshan</span><br></h1><br>
+                <h1 class="home_title">Hey, <br>It's me
+                    <!-- <span class="home_title-color">Srivarshan</span> -->
+                    <main class="home_main">Srivarshan</main>
+                </h1><br>
                 <h1>Welcome to my personal Portfolio Site</h1>
-                <a href="#contact" class="button" id="contact">Connect with me</a>
+                <!-- <a href="#contact" class="button" id="contact">Connect with me</a> -->
+                <div class="button-container-2">
+                    <span class="mas">Connect with me</span>
+                    <button type="button" id="connect_button" name="Hover">Connect with me</button>
+                </div>
             </div>
 
             <div class="home_social">
-                <a href="https://www.facebook.com/srivarshan0611" target="_blank" class="home_social-icon"
-                    data-aos="fade-down" data-aos-delay="150"><i class='bx bxl-facebook-circle'></i></a>
-                <a href="https://www.instagram.com/_sri.varshan_/?utm_medium=copy_link" target="_blank"
-                    class="home_social-icon" data-aos="fade-down" data-aos-delay="200"><i
-                        class='bx bxl-instagram-alt'></i></a>
-                <a href="https://twitter.com/intent/tweet?url=" target="_blank" class="home_social-icon"
-                    data-aos="fade-down" data-aos-delay="250"><i class='bx bxl-twitter'></i></a>
-                <a href="https://www.linkedin.com/in/sri-varshan" target="_blank" class="home_social-icon"
-                    data-aos="fade-down" data-aos-delay="300"><i class='bx bxl-linkedin'></i></a>
-                <a href="https://github.com/kakarot03" target="_blank" class="home_social-icon" data-aos="fade-down"
-                    data-aos-delay="350"><i class='bx bxl-github'></i></a>
+                <ul class="social-icons">
+                    <li id="li1">
+                        <a href="https://www.facebook.com/srivarshan0611" target="_blank" id="icon1"
+                            class="home_social-icon" data-aos="fade-down" data-aos-delay="150"><i
+                                class='bx bxl-facebook-circle'></i></a>
+                        <div class="shadow" id="shadow1"></div>
+                    </li>
+                    <li id="li2">
+                        <a href="https://www.instagram.com/_sri.varshan_/?utm_medium=copy_link" id="icon2"
+                            target="_blank" class="home_social-icon" data-aos="fade-down" data-aos-delay="200"><i
+                                class='bx bxl-instagram-alt'></i></a>
+                        <div class="shadow " id="shadow2"></div>
+                    </li>
+                    <li id="li3">
+                        <a href="https://twitter.com/intent/tweet?url=" target="_blank" id="icon3"
+                            class="home_social-icon" data-aos="fade-down" data-aos-delay="250"><i
+                                class='bx bxl-twitter'></i></a>
+                        <div class="shadow " id="shadow3"></div>
+                    </li>
+                    <li id="li4">
+                        <a href="https://www.linkedin.com/in/sri-varshan" target="_blank" id="icon4"
+                            class="home_social-icon" data-aos="fade-down" data-aos-delay="300"><i
+                                class='bx bxl-linkedin'></i></a>
+                        <div class="shadow " id="shadow4"></div>
+                    </li>
+                    <li id="li5">
+                        <a href="https://github.com/kakarot03" target="_blank" id="icon5" class="home_social-icon"
+                            data-aos="fade-down" data-aos-delay="350"><i class='bx bxl-github'></i></a>
+                        <div class="shadow " id="shadow5"></div>
+                    </li>
+                </ul>
             </div>
+            <div id="demo"></div>
 
             <div class="home_img" data-aos="fade-down" data-aos-delay="400">
                 <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 711.1879 669.68268"
@@ -616,8 +646,24 @@
                     <textarea name="" type="text" id="message" cols="0" rows="6" class="control_input" name="message"
                         data-aos="fade-right" data-aos-delay="350" style="height: 100px;"></textarea>
 
-                    <button type="submit" onclick="sendMail()" id="submit" class="control_button button" name="btn-send"
-                        data-aos="fade-right" data-aos-delay="400">Send</button>
+                    <button class="button" type="submit" onclick="sendMail()" id="submit" name="btn-send"
+                        data-aos="fade-right" data-aos-delay="400">
+                        <span class="default">Send</span>
+                        <span class="success" style="font-size: 17px;">
+                            <svg viewBox="0 0 16 16">
+                                <polyline points="3.75 9 7 12 13 5"></polyline>
+                            </svg>Sent
+                        </span>
+                        <svg class="trails" viewBox="0 0 33 64">
+                            <path d="M26,4 C28,13.3333333 29,22.6666667 29,32 C29,41.3333333 28,50.6666667 26,60">
+                            </path>
+                            <path d="M6,4 C8,13.3333333 9,22.6666667 9,32 C9,41.3333333 8,50.6666667 6,60"></path>
+                        </svg>
+                        <div class="plane">
+                            <div class="left"></div>
+                            <div class="right"></div>
+                        </div>
+                    </button>
 
                 </form>
             </div>

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
+@font-face {
+  src: url("https://www.axis-praxis.org/fonts/webfonts/MetaVariableDemo-Set.woff2") format("woff2");
+  font-family: "Meta";
+  font-style: normal;
+  font-weight: normal;
+}
+
 /* Root Variables to alter the values in a single alteration */
 
 /* Variables */
@@ -74,6 +81,7 @@ body {
   font-family: var(--body-font);
   font-size: 0.4 rem;
   color: var(--second-color);
+  background-color: rgb(237, 237, 237);
   overflow-x: hidden;
 }
 
@@ -190,7 +198,6 @@ img {
   width: 100%;
   height: 0.18rem;
   left: 0;
-  background-color: var(--first-color);
   top: 2rem;
 }
 
@@ -210,6 +217,7 @@ img {
 .home_title {
   font-size: var(--big-font-size);
   margin-bottom: var(--margin-2);
+  margin-top: var(--margin-3);
 }
 
 .home_title-color {
@@ -221,7 +229,7 @@ img {
   color: var(--second-color);
 }
 
-.home_social {
+/* .home_social {
   margin-top: 10%;
   margin-left: 13%;
   display: flex;
@@ -242,6 +250,112 @@ img {
 
 .home_social-icon {
   transition: all 0.3s linear;
+} */
+
+/* Social Icons */
+
+.social-container {
+  width: 400px;
+  margin: 40vh auto;
+  text-align: center;
+}
+
+.social-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin: 0.15em;
+  position: relative;
+  font-size: 1.2em;
+}
+
+.social-icons i {
+  color: #fff;
+  position: absolute;
+  font-size: 24px;
+  top: 19px;
+  left: 19px;
+  transition: all 265ms ease-out;
+}
+
+.social-icons a {
+  display: inline-block;
+  text-align: center;
+}
+
+.social-icons a:before {
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  content: " ";
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: block;
+  background: linear-gradient(45deg, #7b00e0, #333333);
+  transition: all 265ms ease-out;
+}
+
+.social-icons a:hover:before {
+  transform: scale(0);
+  transition: all 265ms ease-in;
+}
+
+.social-icons a:hover i {
+  transform: scale(2.2) translateY(-5px);
+  color: #ae31d9;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(90, 89, 89));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 265ms ease-in;
+}
+
+#shadow1,
+#shadow2,
+#shadow3,
+#shadow4,
+#shadow5 {
+  position: absolute;
+  display: none;
+  left: 33%;
+  width: 30px;
+  bottom: 0px;
+  z-index: 5;
+  box-shadow: 0px 13px 16px 3px #000000;
+}
+
+.hover_icon i {
+  color: #222222;
+  transform: scale(2.2) translateY(-10px);
+}
+
+.hover_anchor a:before {
+  transform: scale(0);
+}
+
+.social-icons a.social-square:before {
+  background: linear-gradient(45deg, #7b00e0, #ae31d9);
+  border-radius: 10%;
+}
+
+.social-icons a.social-square:hover:before {
+  transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -webkit-transform: scale(-180deg);
+  border-radius: 100%;
+}
+
+.social-icons a.social-square:hover i {
+  transform: scale(1.6);
+  -ms-transform: scale(1.6);
+  -webkit-transform: scale(1.6);
+  color: #fff;
+  transform: scale(1.6);
+  -webkit-text-fill-color: #fff;
 }
 
 .home_img {
@@ -257,7 +371,7 @@ img {
 
 /* Buttons */
 
-.button {
+/* .button {
   position: relative;
   display: inline-block;
   color: #fff;
@@ -274,6 +388,103 @@ img {
 
 .control_button {
   margin-top: var(--margin-1);
+} */
+
+.button-container-2 {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  margin-top: 4vh;
+  overflow: hidden;
+  border: 1px solid #000;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+}
+
+.button-container-2 button {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #000;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/urban-sprite.png");
+  -webkit-mask-size: 3000% 100%;
+  mask-size: 3000% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(29) forwards;
+  animation: ani2 0.7s steps(29) forwards;
+}
+
+.button-container-2 button:hover {
+  -webkit-animation: ani 0.7s steps(29) forwards;
+  animation: ani 0.7s steps(29) forwards;
+  background: linear-gradient(45deg, #7b00e0, #ae31d9);
+}
+
+.mas {
+  position: absolute;
+  color: #000;
+  text-align: center;
+  width: 101%;
+  position: absolute;
+  font-size: 11px;
+  margin-top: 12px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
 }
 
 /* Custom Section */
@@ -465,7 +676,7 @@ img {
 }
 
 .work_img img {
-  transition: 1s;
+  transition: .5s;
   cursor: pointer;
 }
 
@@ -490,7 +701,7 @@ img {
   border-radius: 0.5rem;
   border: 1.5px solid var(--second-color);
   outline: none;
-  margin-bottom: var(--margin-2);
+  margin-bottom: 20px;
   margin-left: 11%;
 }
 
@@ -533,13 +744,18 @@ img {
   }
 }
 
+#error {
+  position: absolute;
+  margin-top: -20px;
+}
+
 .error_message {
   margin-bottom: 10px;
   font-weight: 1000;
   color: red;
   padding: 0px;
   text-align: center;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .success_message {
@@ -548,7 +764,7 @@ img {
   color: rgb(47, 229, 41);
   padding: 0px;
   text-align: center;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease-in-out;
 }
 
 .footer {
@@ -632,17 +848,14 @@ img {
   }
 
   .home_social {
-    padding-top: 0;
+    margin-top: 7rem;
     margin-left: auto;
     margin-right: auto;
-    flex-direction: row;
     align-self: flex-end;
   }
 
   .home_social-icon {
-    font-size: 38px;
-    margin-bottom: 0;
-    margin-right: var(--margin-4);
+    margin: 20px;
   }
 
   .home_img {
@@ -689,7 +902,7 @@ img {
   }
 
   .work_link {
-    width: 85%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -713,6 +926,38 @@ img {
     width: 20%;
     margin-left: 430px;
   }
+
+  .control_input {
+    margin-bottom: 30px;
+  }
+
+  .button-container-2 {
+    font-family: cursive;
+    font-size: 14px;
+    position: relative;
+    width: 150px;
+    height: 60px;
+    margin-top: 4vh;
+    overflow: hidden;
+    border: 1px solid #000;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    border-radius: 8px;
+  }
+
+  .button-container-2 button {
+    font-family: cursive;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .mas {
+    font-family: cursive;
+    margin-top: 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -724,4 +969,29 @@ img {
   .home_img {
     right: 10%;
   }
+
+  .home_main {
+    width: max-content;
+    transition: all 0.5s;
+    -webkit-text-stroke: 1px #000000;
+    font-variation-settings: "wght" 1000, "ital" 1;
+    font-size: 5rem;
+    color: transparent;
+    font-family: "Meta", sans-serif;
+    text-shadow: 4px 4px 2px #8e0af3,
+      9px 9px 2px #5001fb;
+    /* 20px 20px 0px #4070f4,
+      25px 25px 0px #f40468,
+      45px 45px 10px #482896; */
+    cursor: pointer;
+    text-transform: uppercase;
+    opacity: 90%;
+  }
+}
+
+
+.home_main:hover {
+  font-variation-settings: "wght" 200, "ital" 0;
+  text-shadow: none;
+  font-weight: bolder;
 }
