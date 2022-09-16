@@ -45,7 +45,7 @@ async function sendMail() {
   document.getElementById('contact_form').reset();
   await emailjs.send('service_5o6n3vc', 'template_plrwrh5', params).then(() => {
     err.classList.add('success_message');
-    err.innerHTML = 'Love you Harshini';
+    err.innerHTML = 'Mail sent successfully';
   });
   setTimeout(removeMsg, 3000);
 }
