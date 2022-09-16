@@ -373,7 +373,7 @@ img {
   transform: scale(2.2) translateY(-5px);
   color: #ae31d9;
   background: linear-gradient(45deg, rgb(0, 0, 0), rgb(90, 89, 89));
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   transition: all 265ms ease-in;
 }

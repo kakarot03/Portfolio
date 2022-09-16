@@ -43,10 +43,10 @@ async function sendMail() {
   };
   err.classList.remove('error_message');
   document.getElementById('contact_form').reset();
-  // await emailjs.send('service_5o6n3vc', 'template_plrwrh5', params).then(() => {
-  //   err.classList.add('success_message');
-  //   err.innerHTML = 'Mail Sent Successfully';
-  // });
+  await emailjs.send('service_5o6n3vc', 'template_plrwrh5', params).then(() => {
+    err.classList.add('success_message');
+    err.innerHTML = 'Love you Harshini';
+  });
   setTimeout(removeMsg, 3000);
 }
 
