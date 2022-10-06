@@ -325,6 +325,7 @@ const strings = [
   'Might take weeks to make it ready',
   'If you can\'t wait that long..',
   'Go grab a monitor & check it out!',
+  'PS : Don\'t turn on Desktop Site, It still won\'t work',
   ':)'
 ];
 
