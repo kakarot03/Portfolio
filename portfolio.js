@@ -36,17 +36,38 @@ async function sendMail() {
     setTimeout(removeMsg, 3000);
     return;
   }
-  var params = {
-    from_name: name,
-    email_id: email,
-    message: msg,
+
+  const data = {
+    service_id: 'service_4093ypd',
+    template_id: 'template_plrwrh5',
+    user_id: 'MVMLPBOd6QIj7T_DM',
+    template_params: {
+      'from_name': name,
+      'email_id': email,
+      'message': msg
+    },
   };
-  err.classList.remove('error_message');
-  document.getElementById('contact_form').reset();
-  await emailjs.send('service_5o6n3vc', 'template_plrwrh5', params).then(() => {
-    err.classList.add('success_message');
-    err.innerHTML = 'Mail sent successfully';
-  });
+
+  fetch('https://api.emailjs.com/api/v1.0/email/send', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      alert('Your mail is sent!');
+    })
+    .catch((error) => {
+      console.error('Oops... ', error);
+      const err = document.getElementById('error');
+      if (err) {
+        err.classList.add('success_message');
+        err.innerHTML = 'Mail sent successfully';
+      }
+    });
+
   setTimeout(removeMsg, 3000);
 }
 
@@ -259,17 +280,21 @@ document.querySelectorAll('button').forEach((button) => {
 const resolver = {
   resolve: function resolve(options, callback) {
     // The string to resolve
-    const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
-    const combinedOptions = Object.assign({}, options, {resolveString: resolveString});
-    
+    const resolveString =
+      options.resolveString ||
+      options.element.getAttribute('data-target-resolver');
+    const combinedOptions = Object.assign({}, options, {
+      resolveString: resolveString,
+    });
+
     function getRandomInteger(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
-    };
-    
+    }
+
     function randomCharacter(characters) {
       return characters[getRandomInteger(0, characters.length - 1)];
-    };
-    
+    }
+
     function doRandomiserEffect(options, callback) {
       const characters = options.characters;
       const timeout = options.timeout;
@@ -280,53 +305,59 @@ const resolver = {
 
       setTimeout(() => {
         if (iterations >= 0) {
-          const nextOptions = Object.assign({}, options, {iterations: iterations - 1});
+          const nextOptions = Object.assign({}, options, {
+            iterations: iterations - 1,
+          });
 
           // Ensures partialString without the random character as the final state.
           if (iterations === 0) {
             element.textContent = partialString;
           } else {
             // Replaces the last character of partialString with a random character
-            element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+            element.textContent =
+              partialString.substring(0, partialString.length - 1) +
+              randomCharacter(characters);
           }
 
-          doRandomiserEffect(nextOptions, callback)
-        } else if (typeof callback === "function") {
-          callback(); 
+          doRandomiserEffect(nextOptions, callback);
+        } else if (typeof callback === 'function') {
+          callback();
         }
       }, options.timeout);
-    };
-    
+    }
+
     function doResolverEffect(options, callback) {
       const resolveString = options.resolveString;
       const characters = options.characters;
       const offset = options.offset;
       const partialString = resolveString.substring(0, offset);
-      const combinedOptions = Object.assign({}, options, {partialString: partialString});
+      const combinedOptions = Object.assign({}, options, {
+        partialString: partialString,
+      });
 
       doRandomiserEffect(combinedOptions, () => {
-        const nextOptions = Object.assign({}, options, {offset: offset + 1});
+        const nextOptions = Object.assign({}, options, { offset: offset + 1 });
 
         if (offset <= resolveString.length) {
           doResolverEffect(nextOptions, callback);
-        } else if (typeof callback === "function") {
+        } else if (typeof callback === 'function') {
           callback();
         }
       });
-    };
+    }
 
     doResolverEffect(combinedOptions, callback);
-  } 
-}
+  },
+};
 
 const strings = [
-  'The Site\'s under development',
-  'It\'s not available for mobile devices',
+  "The Site's under development",
+  "It's not available for mobile devices",
   'Might take weeks to make it ready',
-  'If you can\'t wait that long..',
+  "If you can't wait that long..",
   'Go grab a monitor & check it out!',
-  'PS : Don\'t turn on Desktop Site, It still won\'t work',
-  ':)'
+  "PS : Don't turn on Desktop Site, It still won't work",
+  ':)',
 ];
 
 let counter = 0;
@@ -339,23 +370,61 @@ const options = {
   // Number of random characters to show
   iterations: 10,
   // Random characters to pick from
-  characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '='],
+  characters: [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'x',
+    'y',
+    'x',
+    '#',
+    '%',
+    '&',
+    '-',
+    '+',
+    '_',
+    '?',
+    '/',
+    '\\',
+    '=',
+  ],
   // String to resolve
   resolveString: strings[counter],
   // The element
-  element: document.querySelector('[data-target-resolver]')
-}
+  element: document.querySelector('[data-target-resolver]'),
+};
 
 // Callback function when resolve completes
 function callback() {
   setTimeout(() => {
-    counter ++;
-    
+    counter++;
+
     if (counter >= strings.length) {
       counter = 0;
     }
-    
-    let nextOptions = Object.assign({}, options, {resolveString: strings[counter]});
+
+    let nextOptions = Object.assign({}, options, {
+      resolveString: strings[counter],
+    });
     resolver.resolve(nextOptions, callback);
   }, 1000);
 }
